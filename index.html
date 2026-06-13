@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Talos LLC — Premium tech accessories, industrial equipment, and custom solutions. Based in Wyoming, USA.">
+  <title>Talos LLC — Premium Tech & Industrial Equipment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="Talos LLC">
+      Talos
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="account.html" class="main-nav" style="display:flex;">My Account</a>
+      <a href="cart.html" class="cart-link">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-count">0</span>
+      </a>
+      <button class="mobile-menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav container">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="account.html">My Account</a>
+    <a href="cart.html">Cart</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-bg" style="background-image: url('images/hero.jpg');"></div>
+    <div class="container hero-content">
+      <h1>Tech Accessories. Industrial Power. Built to Last.</h1>
+      <p>Discover our wide range of high-quality electronics, power distribution solutions, and industrial equipment designed for reliability and high performance.</p>
+      <div class="hero-actions">
+        <a href="shop.html" class="btn btn-primary btn-lg">Shop Now</a>
+        <a href="shop.html" class="btn btn-outline btn-lg">View Categories</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <h2>Shop by Category</h2>
+        <p>Browse our curated selection of premium tech and industrial products</p>
+      </div>
+      <div class="category-grid">
+        <div class="category-card">
+          <a href="shop.html?category=smart-devices" class="category-card-link">
+            <div class="category-card-image"><img src="images/categories/smart-devices.jpg" alt="Smart Devices & Audio"></div>
+            <div class="category-card-body">
+              <h3>Smart Devices & Audio</h3>
+              <p>Smart devices, audio equipment, and more</p>
+              <span class="shop-link">Shop Now →</span>
+            </div>
+          </a>
+        </div>
+        <div class="category-card">
+          <a href="shop.html?category=ventilation" class="category-card-link">
+            <div class="category-card-image"><img src="images/categories/ventilation.jpg" alt="Ventilation & Cooling"></div>
+            <div class="category-card-body">
+              <h3>Ventilation & Cooling</h3>
+              <p>High-velocity fans for industrial use</p>
+              <span class="shop-link">Shop Now →</span>
+            </div>
+          </a>
+        </div>
+        <div class="category-card">
+          <a href="shop.html?category=power" class="category-card-link">
+            <div class="category-card-image"><img src="images/categories/power.jpg" alt="Power Distribution"></div>
+            <div class="category-card-body">
+              <h3>Power Distribution</h3>
+              <p>Reliable power extension solutions</p>
+              <span class="shop-link">Shop Now →</span>
+            </div>
+          </a>
+        </div>
+        <div class="category-card">
+          <a href="shop.html?category=connectivity" class="category-card-link">
+            <div class="category-card-image"><img src="images/categories/connectivity.jpg" alt="Connectivity & Data"></div>
+            <div class="category-card-body">
+              <h3>Connectivity & Data</h3>
+              <p>Premium charging and data cables</p>
+              <span class="shop-link">Shop Now →</span>
+            </div>
+          </a>
+        </div>
+        <div class="category-card">
+          <a href="shop.html?category=storage" class="category-card-link">
+            <div class="category-card-image"><img src="images/categories/storage.jpg" alt="Storage & Protective Cases"></div>
+            <div class="category-card-body">
+              <h3>Storage & Protective Cases</h3>
+              <p>Durable cases and storage solutions</p>
+              <span class="shop-link">Shop Now →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Featured Products</h2>
+        <p>Explore our selection of premium industrial equipment and tech accessories</p>
+      </div>
+      <div class="product-grid" id="featured-products"></div>
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="shop.html" class="btn btn-outline">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="promo-banner">
+        <div>
+          <span class="promo-badge">Limited Time Offer</span>
+          <h2>15% Off Selected Goods</h2>
+          <p>Look at our premium selection of goods — now discounted by 15%. Applies on orders with total spend over $350. Discount will be automatically applied at checkout.</p>
+        </div>
+        <a href="shop.html" class="btn btn-primary btn-lg">Shop the Sale</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon">🚚</div>
+          <h3>Fast Shipping</h3>
+          <p>Free delivery on orders over $350</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">✓</div>
+          <h3>Quality Guarantee</h3>
+          <p>All products tested and verified</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">↩</div>
+          <h3>30-Day Returns</h3>
+          <p>30-day money-back guarantee</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">💬</div>
+          <h3>Customer Support</h3>
+          <p>US-based dedicated assistance</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img src="images/logo.png" alt="Talos LLC">
+          Talos
+        </a>
+        <p>Your trusted partner for premium tech goods and industrial equipment. Talos LLC, Wyoming, USA.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Products</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="track-order.html">Track Order</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="shop.html?category=smart-devices">Smart Devices & Audio</a></li>
+          <li><a href="shop.html?category=ventilation">Ventilation & Cooling</a></li>
+          <li><a href="shop.html?category=power">Power Distribution</a></li>
+          <li><a href="shop.html?category=connectivity">Connectivity & Data</a></li>
+          <li><a href="shop.html?category=storage">Storage & Protective Cases</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">Subscribe to receive updates on new products and special offers.</p>
+        <form id="newsletter-form" class="newsletter-form">
+          <div class="form-fields" style="display: contents;">
+            <input type="email" placeholder="Your email" required>
+            <button type="submit">Subscribe</button>
+          </div>
+          <div class="form-success">
+            <h3>Thank you!</h3>
+            <p style="color: var(--text-secondary);">You've been subscribed to our newsletter.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Talos LLC. All rights reserved. Wyoming, USA.</p>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="shipping.html">Shipping Policy</a>
+        <a href="refunds.html">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
