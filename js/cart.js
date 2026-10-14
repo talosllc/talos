@@ -4,10 +4,44 @@ const Cart = {
   getItems: function () {
     try {
       const data = localStorage.getItem(CART_KEY);
-      return data ? JSON.parse(data) : [];
+      const items = data ? JSON.parse(data) : [];
+      return this.sanitizeItems(items);
     } catch (e) {
       return [];
     }
+  },
+
+  /** Remove discontinued products and refresh name/image from catalog */
+  sanitizeItems: function (items) {
+    if (!Array.isArray(items) || typeof getProductById !== 'function') {
+      return Array.isArray(items) ? items : [];
+    }
+
+    const cleaned = [];
+    let changed = false;
+
+    items.forEach(function (item) {
+      const product = getProductById(item.id);
+      if (!product) {
+        changed = true;
+        return;
+      }
+      if (item.name !== product.name || item.image !== product.image || item.price !== null) {
+        changed = true;
+      }
+      cleaned.push({
+        id: product.id,
+        name: product.name,
+        price: null,
+        image: product.image,
+        quantity: item.quantity || 1
+      });
+    });
+
+    if (changed) {
+      localStorage.setItem(CART_KEY, JSON.stringify(cleaned));
+    }
+    return cleaned;
   },
 
   saveItems: function (items) {
@@ -25,11 +59,14 @@ const Cart = {
 
     if (existing) {
       existing.quantity += quantity;
+      existing.name = product.name;
+      existing.image = product.image;
+      existing.price = null;
     } else {
       items.push({
         id: product.id,
         name: product.name,
-        price: product.price,
+        price: null,
         image: product.image,
         quantity: quantity
       });
@@ -69,16 +106,15 @@ const Cart = {
   },
 
   getSubtotal: function () {
-    return this.getItems().reduce(function (sum, i) { return sum + i.price * i.quantity; }, 0);
+    return null;
   },
 
   getDiscount: function () {
-    const subtotal = this.getSubtotal();
-    return subtotal >= 350 ? subtotal * 0.15 : 0;
+    return 0;
   },
 
   getTotal: function () {
-    return this.getSubtotal() - this.getDiscount();
+    return null;
   },
 
   updateBadge: function () {
@@ -93,5 +129,7 @@ const Cart = {
 };
 
 $(document).ready(function () {
+  // Drop discontinued items (e.g. old catalog) and refresh badge
+  Cart.getItems();
   Cart.updateBadge();
 });

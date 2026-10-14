@@ -1,4 +1,4 @@
-$(document).ready(function () {
+﻿$(document).ready(function () {
   initMobileNav();
   initNewsletter();
   initContactForm();
@@ -181,7 +181,7 @@ function renderProductDetail() {
   }
 
   const category = getCategoryById(product.category);
-  document.title = product.name + ' — Talos LLC';
+  document.title = product.name + ' — Talos Worldwide LLC';
 
   $('#product-detail').html(
     '<div class="product-detail-grid">' +
@@ -252,32 +252,26 @@ function renderCartPage() {
         '</div>' +
         '<div class="cart-item-info">' +
           '<h3><a href="product.html?id=' + item.id + '">' + item.name + '</a></h3>' +
-          '<p class="cart-item-price">' + formatPrice(item.price) + '</p>' +
+          '<p class="cart-item-price">POA</p>' +
         '</div>' +
         '<div class="cart-item-qty">' +
           '<button class="qty-btn cart-qty-decrease" data-id="' + item.id + '">−</button>' +
           '<span>' + item.quantity + '</span>' +
           '<button class="qty-btn cart-qty-increase" data-id="' + item.id + '">+</button>' +
         '</div>' +
-        '<div class="cart-item-total">' + formatPrice(item.price * item.quantity) + '</div>' +
+        '<div class="cart-item-total">POA</div>' +
         '<button class="cart-item-remove" data-id="' + item.id + '" aria-label="Remove item">&times;</button>' +
       '</div>';
   });
-
-  const subtotal = Cart.getSubtotal();
-  const discount = Cart.getDiscount();
-  const total = Cart.getTotal();
 
   container.html(
     '<div class="cart-layout">' +
       '<div class="cart-items">' + rows + '</div>' +
       '<div class="cart-summary">' +
         '<h3>Order Summary</h3>' +
-        '<div class="summary-row"><span>Subtotal</span><span>' + formatPrice(subtotal) + '</span></div>' +
-        (discount > 0
-          ? '<div class="summary-row discount"><span>15% Off (orders $350+)</span><span>−' + formatPrice(discount) + '</span></div>'
-          : '<p class="promo-hint">Spend $350+ to get 15% off automatically!</p>') +
-        '<div class="summary-row total"><span>Total</span><span>' + formatPrice(total) + '</span></div>' +
+        '<div class="summary-row"><span>Pricing</span><span>POA</span></div>' +
+        '<p class="promo-hint">All prices are Price on Application. Contact us for a quote.</p>' +
+        '<div class="summary-row total"><span>Total</span><span>POA</span></div>' +
         '<a href="checkout.html" class="btn btn-primary btn-lg btn-block">Proceed to Checkout</a>' +
         '<a href="shop.html" class="btn btn-outline btn-block">Continue Shopping</a>' +
       '</div>' +
@@ -316,19 +310,14 @@ function renderCheckoutPage() {
 
   let rows = '';
   items.forEach(function (item) {
-    rows += '<div class="checkout-item"><span>' + item.name + ' × ' + item.quantity + '</span><span>' + formatPrice(item.price * item.quantity) + '</span></div>';
+    rows += '<div class="checkout-item"><span>' + item.name + ' × ' + item.quantity + '</span><span>POA</span></div>';
   });
-
-  const subtotal = Cart.getSubtotal();
-  const discount = Cart.getDiscount();
-  const total = Cart.getTotal();
 
   summary.html(
     rows +
     '<div class="summary-divider"></div>' +
-    '<div class="summary-row"><span>Subtotal</span><span>' + formatPrice(subtotal) + '</span></div>' +
-    (discount > 0 ? '<div class="summary-row discount"><span>15% Discount</span><span>−' + formatPrice(discount) + '</span></div>' : '') +
-    '<div class="summary-row total"><span>Total</span><span>' + formatPrice(total) + '</span></div>'
+    '<div class="summary-row"><span>Pricing</span><span>POA</span></div>' +
+    '<div class="summary-row total"><span>Total</span><span>POA</span></div>'
   );
 
   $('#checkout-form').on('submit', function (e) {
