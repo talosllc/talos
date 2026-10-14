@@ -18,24 +18,6 @@ const PRODUCTS = [
     featured: true
   },
   {
-    id: 'ladder-weld-clip-feet',
-    name: 'Light Grey Ladder Weld Clip Feet',
-    category: 'moulded',
-    price: null,
-    description: 'Light grey moulded feet that clip over welds on step ladders. Quick-fit design for secure attachment without complex assembly. Ideal for ladder manufacturers and maintenance stock.',
-    image: 'images/products/rubber-moulded-parts-02.jpg',
-    featured: false
-  },
-  {
-    id: 'bathroom-cubicle-feet',
-    name: 'Dark Grey Bathroom Cubicle Feet',
-    category: 'moulded',
-    price: null,
-    description: 'Dark grey moulded feet for bathroom cubicles and partition systems. Stable, moisture-resistant base components for commercial washroom installations.',
-    image: 'images/products/rubber-moulded-parts-03.jpg',
-    featured: false
-  },
-  {
     id: 'injection-moulded-parts',
     name: 'Custom Injection Moulded Parts',
     category: 'moulded',
@@ -104,7 +86,7 @@ const PRODUCTS = [
     category: 'aluminium',
     price: null,
     description: 'Aluminium extrusion die design, production, cutting, and fabrication supply. Full-facility support from profile design through to finished extrusion assemblies.',
-    image: 'images/products/aluminium-extrusions-01.jpg',
+    image: 'images/products/aluminium-extrusion-design.jpg',
     featured: true
   },
   {

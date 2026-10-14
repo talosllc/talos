@@ -1,10 +1,15 @@
 ﻿$(document).ready(function () {
+  initCopyrightYear();
   initMobileNav();
   initNewsletter();
   initContactForm();
   initTrackOrder();
   initAccountForms();
 });
+
+function initCopyrightYear() {
+  $('.copyright-year').text(new Date().getFullYear());
+}
 
 function initMobileNav() {
   $('.mobile-menu-toggle').on('click', function () {
